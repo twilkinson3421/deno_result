@@ -1,0 +1,86 @@
+{
+    "name": "@zerm/result",
+    "version": "3.0.0",
+    "license": "MIT",
+
+    "imports": {
+        "~/": "./"
+    },
+
+    "exports": {
+        ".": "./src/mod.ts"
+    },
+
+    "tasks": { },
+
+    "unstable": [ ],
+
+    "fmt": {
+        "exclude": [ "**/*.min.*", "**/*.vendor.*" ],
+
+        "indentWidth": 4,
+        "lineWidth": 120,
+        "newLineKind": "lf",
+        "semiColons": true,
+        "singleQuote": false,
+        "useTabs": false,
+
+        "bracePosition": "maintain",
+        "nextControlFlowPosition": "maintain",
+        "operatorPosition": "maintain",
+        "quoteProps": "consistent",
+        "singleBodyPosition": "maintain",
+        "useBraces": "maintain"
+    },
+
+    "compilerOptions": {
+        "lib": [ "deno.window", "deno.ns", "deno.unstable" ],
+
+        "jsx": "precompile",
+
+        "allowUnusedLabels": true,
+        "exactOptionalPropertyTypes": true,
+        "noErrorTruncation": true,
+        "noImplicitReturns": true,
+        "noPropertyAccessFromIndexSignature": true,
+        "noUncheckedIndexedAccess": true,
+        "verbatimModuleSyntax": true
+    },
+
+    "lint": {
+        "exclude": [ "**/*.min.*", "**/*.vendor.*" ],
+
+        "rules": {
+            "tags": [ "recommended", "jsr", "jsx", "workspace" ],
+
+            "include": [
+                "camelcase",
+                "default-param-last",
+                "eqeqeq",
+                "explicit-function-return-type",
+                "explicit-module-boundary-types",
+                "guard-for-in",
+                "no-await-in-loop",
+                "no-boolean-literal-for-arguments",
+                "no-const-assign",
+                "no-eval",
+                "no-external-import",
+                "no-implicit-declare-namespace-export",
+                "no-inferrable-types",
+                "no-non-null-asserted-optional-chain",
+                "no-non-null-assertion",
+                "no-self-compare",
+                "no-sparse-arrays",
+                "no-sync-fn-in-async-fn",
+                "no-throw-literal",
+                "no-undef",
+                "no-useless-rename",
+                "prefer-ascii",
+                "single-var-declarator",
+                "triple-slash-reference"
+            ],
+
+            "exclude": [ "no-namespace" ]
+        }
+    }
+}
