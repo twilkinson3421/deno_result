@@ -1,3 +1,5 @@
+import type * as Self from "~/src/mod.ts";
+
 export * as Result from "~/src/mod.ts";
 
 export type Success<T = unknown> = T extends never ? never : { ok: true; value: T };
@@ -6,8 +8,8 @@ export type Failure<T = unknown> = T extends never ? never : { ok: false; error:
 export type Result<T = unknown, E = unknown> = Success<T> | Failure<E>;
 
 export namespace Case {
-    export type Success<T = unknown> = T extends Result.Success<infer U> ? Result.Success<U> : never;
-    export type Failure<T = unknown> = T extends Result.Failure<infer U> ? Result.Failure<U> : never;
+    export type Success<T = unknown> = T extends Self.Success<infer U> ? Self.Success<U> : never;
+    export type Failure<T = unknown> = T extends Self.Failure<infer U> ? Self.Failure<U> : never;
 }
 
 export type Inspect<T> = Case.Success<T>["value"] | Case.Failure<T>["error"];
