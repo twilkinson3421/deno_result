@@ -30,9 +30,9 @@ export function failure(error: unknown = null): Failure {
     return { ok: false, error };
 }
 
-export function from<const T extends boolean>(test: T): From<T, undefined>;
+export function from<const T extends boolean>(test: T): From<T, null>;
 export function from<const T extends boolean, const U>(test: T, data: U): From<T, U>;
-export function from(test: boolean, data: unknown = undefined): From {
+export function from(test: boolean, data: unknown = null): From {
     return test ? success(data) : failure(data);
 }
 
