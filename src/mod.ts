@@ -1,7 +1,5 @@
 import type * as Self from "~/src/mod.ts";
 
-export * as Result from "~/src/mod.ts";
-
 export type Success<T = unknown> = T extends never ? never : { ok: true; value: T };
 export type Failure<T = unknown> = T extends never ? never : { ok: false; error: T };
 
