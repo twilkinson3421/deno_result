@@ -1,22 +1,22 @@
 {
     "name": "@zerm/result",
-    "version": "3.1.0",
+    "version": "3.2.0",
     "license": "MIT",
-
-    "imports": {
-        "~/": "./"
-    },
 
     "exports": {
         ".": "./src/mod.ts"
     },
 
-    "tasks": { },
-
     "unstable": [ ],
 
+    "tasks": { },
+
+    "imports": {
+        "~/": "./"
+    },
+
     "fmt": {
-        "exclude": [ "**/*.min.*", "**/*.vendor.*" ],
+        "exclude": [ "**/*.min.*", "**/*.vendor.*", "**/*.lock" ],
 
         "indentWidth": 4,
         "lineWidth": 120,
@@ -37,6 +37,7 @@
         "lib": [ "deno.window", "deno.ns", "deno.unstable" ],
 
         "jsx": "precompile",
+        "jsxImportSource": "preact",
 
         "allowUnusedLabels": true,
         "exactOptionalPropertyTypes": true,
@@ -48,7 +49,7 @@
     },
 
     "lint": {
-        "exclude": [ "**/*.min.*", "**/*.vendor.*" ],
+        "exclude": [ "**/*.min.*", "**/*.vendor.*", "**/*.lock" ],
 
         "rules": {
             "tags": [ "recommended", "jsr", "jsx", "workspace" ],
@@ -80,7 +81,7 @@
                 "triple-slash-reference"
             ],
 
-            "exclude": [ "no-namespace" ]
+            "exclude": [ "no-namespace", "jsx-key" ]
         }
     }
 }
