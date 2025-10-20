@@ -1,4 +1,9 @@
-/** Keys used to access the data properties of a `Success` or `Failure` result. */
+/**
+ * Keys used to access the data properties of a `Success` or `Failure` result.
+ *
+ * Used internally to ease refactoring; should not be used by consumers -
+ * use dot notation instead.
+ */
 export enum DataKey
 {
     Success = "value",
